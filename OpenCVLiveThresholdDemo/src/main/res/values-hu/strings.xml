@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">KfGyak küszöbölés élőképen demó</string>
+    <string name="hello_world">Hello, világ!</string>
+    <string name="warning_experimental">Ez egy kísérleti programverzió! Néhány funkció még hiányos!</string>
+    <string name="request_permission">A program működéséhez kamera hozzáférési engedély szükséges!</string>
+    <string name="btn_caption_gray">Szürke</string>
+    <string name="btn_caption_globalth">Globális küszöb</string>
+    <string name="btn_caption_otsu">Otsu</string>
+    <string name="btn_caption_adaptive1">Adaptív 1</string>
+    <string name="btn_caption_adaptive2">Adaptív 2</string>
+    <string name="tv_caption_gray">Szürkeárnyalatos élőkép</string>
+    <string name="tv_caption_globalth">Küszöbérték: %1$d</string>
+    <string name="tv_caption_otsu">Számított Otsu küszöb: %1$d</string>
+    <string name="tv_caption_adaptive1minus">Adaptív küszöb: %1$dx%2$d szomszédság átlaga - %3$d"</string>
+    <string name="tv_caption_adaptive1plus">Adaptív küszöb: %1$dx%2$d szomszédság átlaga + %3$d"</string>
+    <string name="tv_caption_adaptive2minus">Adaptív küszöb: %1$dx%2$d szomszédság súlyozott átlaga - %3$d"</string>
+    <string name="tv_caption_adaptive2plus">Adaptív küszöb: %1$dx%2$d szomszédság súlyozott átlaga + %3$d"</string>
+    <string name="btn_caption_THRESH_BINARY_INV">THRESH_BINARY_INV</string>
+    <string name="btn_caption_THRESH_BINARY">THRESH_BINARY</string>
+</resources>

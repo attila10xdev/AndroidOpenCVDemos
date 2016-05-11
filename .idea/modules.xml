@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidOpenCVDemos.iml" filepath="$PROJECT_DIR$/AndroidOpenCVDemos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OpenCVLiveHistogramDemo/OpenCVLiveHistogramDemo.iml" filepath="$PROJECT_DIR$/OpenCVLiveHistogramDemo/OpenCVLiveHistogramDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OpenCVLiveTest/OpenCVLiveTest.iml" filepath="$PROJECT_DIR$/OpenCVLiveTest/OpenCVLiveTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OpenCVLiveThresholdDemo/OpenCVLiveThresholdDemo.iml" filepath="$PROJECT_DIR$/OpenCVLiveThresholdDemo/OpenCVLiveThresholdDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OpenCVTest/OpenCVTest.iml" filepath="$PROJECT_DIR$/OpenCVTest/OpenCVTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/openCVLibrary2411/openCVLibrary2411.iml" filepath="$PROJECT_DIR$/openCVLibrary2411/openCVLibrary2411.iml" />
+      <module fileurl="file://$PROJECT_DIR$/opencvlivenativetest/opencvlivenativetest.iml" filepath="$PROJECT_DIR$/opencvlivenativetest/opencvlivenativetest.iml" />
+    </modules>
+  </component>
+</project>

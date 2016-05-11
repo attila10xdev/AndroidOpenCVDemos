@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">KfGyak hisztogram élőkép demó</string>
+    <string name="hello_world">Hello, világ!</string>
+    <string name="warning_experimental">Ez egy kísérleti programverzió! Néhány funkció még hiányos!</string>
+    <string name="request_permission">A program működéséhez kamera hozzáférési engedély szükséges!</string>
+    <string name="btn_caption_grayorcolor">Szín üzemmód</string>
+    <string name="btn_caption_gray">Szürekárnyalatos</string>
+    <string name="btn_caption_color">Színes</string>
+    <string name="btn_caption_original">Eredeti</string>
+    <string name="btn_caption_histeq">Hisztogram kiegyenlítés</string>
+    <string name="btn_caption_histstretch">Kontraszt széthúzás</string>
+    <string name="tv_caption_gray">Szürkeárnyalatos élőkép (eredeti)</string>
+    <string name="tv_caption_grayeq">Hisztogramkiegyenlített szürkeárnyalatos</string>
+    <string name="tv_caption_color">Színes élőkép (eredeti)</string>
+    <string name="tv_caption_coloreq">Hisztogramkiegyenlített színes</string>
+    <string name="tv_caption_graystretch">Szürke kontraszt széthúzás: 0 &lt;- [%1$d, %2$d] -&gt; 255</string>
+    <string name="tv_caption_colorstretch">Színes kontraszt széthúzás: 0 &lt;- [%1$d, %2$d] -&gt; 255</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">IpLab Threshold Live Demo</string>
+    <string name="hello_world">Hello, World!</string>
+    <string name="warning_experimental">This is an experimental version! Some functions may missing!</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="btn_caption_gray">Gray</string>
+    <string name="btn_caption_globalth">Global Threshold</string>
+    <string name="btn_caption_otsu">Otsu</string>
+    <string name="btn_caption_adaptive1">Adaptive 1</string>
+    <string name="btn_caption_adaptive2">Adaptive 2</string>
+    <string name="tv_caption_gray">Gray liveview</string>
+    <string name="tv_caption_globalth">Threshold value: %1$d</string>
+    <string name="tv_caption_otsu">Computed Otsu Threshold: %1$d</string>
+    <string name="tv_caption_adaptive1minus">Adaptive: Mean in %1$dx%2$d neighborhood - %3$d</string>
+    <string name="tv_caption_adaptive1plus">Adaptive: Mean in %1$dx%2$d neighborhood + %3$d</string>
+    <string name="tv_caption_adaptive2minus">Adaptive: Weighted mean in %1$dx%2$d neighborhood - %3$d</string>
+    <string name="tv_caption_adaptive2plus">Adaptive: Weighted mean in %1$dx%2$d neighborhood + %3$d</string>
+    <string name="btn_caption_THRESH_BINARY_INV">THRESH_BINARY_INV</string>
+    <string name="btn_caption_THRESH_BINARY">THRESH_BINARY</string>
+</resources>

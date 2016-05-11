@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">OpenCV kamera élőkép teszt</string>
+    <string name="hello_world">Hello, Világ!</string>
+    <string name="request_permission">A program működéséhez kamera hozzáférési engedély szükséges!</string>
+    <string name="tv_caption_op1">Paraméter érték: %d (natív OpenCV)</string>
+    <string name="tv_caption_op2">Paraméter érték: %d (Java OpenCV)</string>
+    <string name="btn_caption_changeop">Módszer váltása</string>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">OpenCV Live Test</string>
+    <string name="hello_world">Hello, World!</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="tv_caption_op1">Parameter value: %d (OpenCV native)</string>
+    <string name="tv_caption_op2">Parameter value: %d ( OpenCV Java)</string>
+    <string name="btn_caption_changeop">Change method</string>
+</resources>

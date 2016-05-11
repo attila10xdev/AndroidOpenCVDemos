@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">IpLab Histogram Live Demo</string>
+    <string name="hello_world">Hello, World!</string>
+    <string name="warning_experimental">This is an experimental version! Some functions may missing!</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="btn_caption_grayorcolor">Choose color mode</string>
+    <string name="btn_caption_gray">Grayscale</string>
+    <string name="btn_caption_color">Color</string>
+    <string name="btn_caption_original">Original</string>
+    <string name="btn_caption_histeq">Equalize histogram</string>
+    <string name="btn_caption_histstretch">Stretch contrast</string>
+    <string name="tv_caption_gray">Gray liveview (original)</string>
+    <string name="tv_caption_grayeq">Histogram equalized grayscale</string>
+    <string name="tv_caption_color">Color liveview (original)</string>
+    <string name="tv_caption_coloreq">Color equalized</string>
+    <string name="tv_caption_graystretch">Gray contrast stretch: 0 &lt;- [%1$d, %2$d] -&gt; 255</string>
+    <string name="tv_caption_colorstretch">Color contrast stretch: 0 &lt;- [%1$d, %2$d] -&gt; 255</string>
+</resources>
