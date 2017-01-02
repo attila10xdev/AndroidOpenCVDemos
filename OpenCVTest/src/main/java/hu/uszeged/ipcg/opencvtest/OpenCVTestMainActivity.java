@@ -84,7 +84,8 @@ public class OpenCVTestMainActivity extends AppCompatActivity {
             Mat im = new Mat();
             Utils.bitmapToMat(bm, im);
             Mat edges = new Mat();
-            Imgproc.Canny(im, edges, 125, 350);
+            //Imgproc.Canny(im, edges, 125, 350);
+            Imgproc.Canny( im, edges, 125, 350, 3, false );
             Utils.matToBitmap( edges, bm );
             iv.setImageBitmap( bm );
         }

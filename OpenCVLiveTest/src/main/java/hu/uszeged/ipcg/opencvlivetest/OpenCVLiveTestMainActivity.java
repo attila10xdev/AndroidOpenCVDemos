@@ -178,7 +178,7 @@ public class OpenCVLiveTestMainActivity extends AppCompatActivity implements CvC
         if (requestCode == REQUEST_CAMERA_PERMISSION) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-                OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_11, this, mLoaderCallback);
+                OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_2_0, this, mLoaderCallback);
             }else {
                 // User gave no camera permission...
                 mActivity.finish();

@@ -188,11 +188,9 @@ public class OpenCVLiveThresholdDemoMainActivity
                 requestCameraPermission();
                 //return;
             } else {
-                //OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_11, this, mLoaderCallback);
                 OpenCVLoader.initAsync( OpenCVLoader.OPENCV_VERSION_3_2_0, this, mLoaderCallback );
             }
         } else {
-            //OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_11, this, mLoaderCallback);
             OpenCVLoader.initAsync( OpenCVLoader.OPENCV_VERSION_3_2_0, this, mLoaderCallback );
         }
     }
