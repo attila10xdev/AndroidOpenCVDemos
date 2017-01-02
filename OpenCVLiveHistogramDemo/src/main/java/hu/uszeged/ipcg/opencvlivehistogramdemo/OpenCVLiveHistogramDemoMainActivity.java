@@ -49,7 +49,7 @@ public class OpenCVLiveHistogramDemoMainActivity
     TODO:
     - Változtatható élőkép méret
     - Hisztogramrajzolás memóriahasználatát átnézni
-    - Fotókészítés (szürke/sínes + aktuális trafó)
+    - Fotókészítés (szürke/színes + aktuális trafó)
     - Üzenet kilépés előtt, ha nincs kamera engedély
 
     Link:
@@ -182,10 +182,10 @@ public class OpenCVLiveHistogramDemoMainActivity
                 requestCameraPermission();
                 //return;
             } else {
-                OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_11, this, mLoaderCallback);
+                OpenCVLoader.initAsync( OpenCVLoader.OPENCV_VERSION_3_2_0, this, mLoaderCallback );
             }
         } else {
-            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_11, this, mLoaderCallback);
+            OpenCVLoader.initAsync( OpenCVLoader.OPENCV_VERSION_3_2_0, this, mLoaderCallback );
         }
     }
 
@@ -422,7 +422,7 @@ public class OpenCVLiveHistogramDemoMainActivity
                     histImage.setTo( new Scalar( 0x5a, 0x59, 0x5b ) );
                     Core.normalize( histogram, histogram, 1, histImage.rows() , Core.NORM_MINMAX, -1, new Mat() );
                     for( int i = 0; i < (int)histSize.get(0, 0)[0]; i++ ) {
-                        Core.line( histImage,
+                        Imgproc.line( histImage,
                                 new Point( 2 * i + 1, histImage.rows() ),
                                 new Point( 2 * i + 1, histImage.rows() - Math.round( histogram.get(i, 0)[0]) ),
                                 new Scalar( 255, 64, 129 ),
@@ -436,33 +436,33 @@ public class OpenCVLiveHistogramDemoMainActivity
                         } else {
                             int th_lower = th1Value < th2Value ? th1Value : th2Value;
                             int th_upper = th1Value > th2Value ? th1Value : th2Value;
-                            Core.line(histImage,
+                            Imgproc.line(histImage,
                                     new Point(2 * th_lower + 1, histImage.rows()),
                                     new Point(2 * th_lower + 1, histImage.rows() - 200),
                                     new Scalar( 255, 255, 255 ),
                                     3, 8, 0 );
-                            Core.line(histImage,
+                            Imgproc.line(histImage,
                                     new Point(2 * th_lower + 1, histImage.rows()),
                                     new Point(0, histImage.rows() - 100),
                                     new Scalar( 255, 255, 255 ),
                                     3, 8, 0 );
-                            Core.line(histImage,
+                            Imgproc.line(histImage,
                                     new Point(2 * th_lower + 1, histImage.rows() - 200),
                                     new Point(0, histImage.rows() - 100),
                                     new Scalar( 255, 255, 255 ),
                                     3, 8, 0 );
 
-                            Core.line(histImage,
+                            Imgproc.line(histImage,
                                     new Point(2 * th_upper + 1, histImage.rows()),
                                     new Point(2 * th_upper + 1, histImage.rows() - 200),
                                     new Scalar( 255, 255, 255 ),
                                     3, 8, 0 );
-                            Core.line(histImage,
+                            Imgproc.line(histImage,
                                     new Point(2 * th_upper + 1, histImage.rows()),
                                     new Point(515, histImage.rows() - 100),
                                     new Scalar( 255, 255, 255 ),
                                     3, 8, 0 );
-                            Core.line(histImage,
+                            Imgproc.line(histImage,
                                     new Point(2 * th_upper + 1, histImage.rows() - 200),
                                     new Point(515, histImage.rows() - 100),
                                     new Scalar( 255, 255, 255 ),

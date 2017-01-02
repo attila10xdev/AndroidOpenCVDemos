@@ -188,10 +188,12 @@ public class OpenCVLiveThresholdDemoMainActivity
                 requestCameraPermission();
                 //return;
             } else {
-                OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_11, this, mLoaderCallback);
+                //OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_11, this, mLoaderCallback);
+                OpenCVLoader.initAsync( OpenCVLoader.OPENCV_VERSION_3_2_0, this, mLoaderCallback );
             }
         } else {
-            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_11, this, mLoaderCallback);
+            //OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_11, this, mLoaderCallback);
+            OpenCVLoader.initAsync( OpenCVLoader.OPENCV_VERSION_3_2_0, this, mLoaderCallback );
         }
     }
 
@@ -420,14 +422,14 @@ public class OpenCVLiveThresholdDemoMainActivity
             histImage.setTo( new Scalar( 0x5a, 0x59, 0x5b ) );
             Core.normalize( histogram, histogram, 1, histImage.rows() , Core.NORM_MINMAX, -1, new Mat() );
             for( int i = 0; i < (int)histSize.get(0, 0)[0]; i++ ) {
-                Core.line( histImage,
+                Imgproc.line( histImage,
                         new Point( 2 * i + 1, histImage.rows() ),
                         new Point( 2 * i + 1, histImage.rows() - Math.round( histogram.get(i, 0)[0]) ),
                         new Scalar( 255, 64, 129 ),
                         3, 8, 0 );
             }
             if( mOpType != operationTypes.GRAY && mOpType != operationTypes.ADAPTIVE_THRESH_1 && mOpType != operationTypes.ADAPTIVE_THRESH_2 ) {
-                Core.line( histImage,
+                Imgproc.line( histImage,
                         new Point( 2 * thresValue + 1, histImage.rows() ),
                         new Point( 2 * thresValue + 1, histImage.rows() - 200 ),
                         new Scalar( 255, 255, 255 ),

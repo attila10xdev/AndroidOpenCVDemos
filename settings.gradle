@@ -1,2 +1,3 @@
 include ':OpenCVTest', ':OpenCVLiveThresholdDemo', ':OpenCVLiveTest', ':OpenCVLiveHistogramDemo', ':opencvlivenativetest'
 include ':openCVLibrary2411'
+include ':openCVLibrary320'

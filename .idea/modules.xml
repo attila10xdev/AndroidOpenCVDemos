@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/OpenCVLiveThresholdDemo/OpenCVLiveThresholdDemo.iml" filepath="$PROJECT_DIR$/OpenCVLiveThresholdDemo/OpenCVLiveThresholdDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/OpenCVTest/OpenCVTest.iml" filepath="$PROJECT_DIR$/OpenCVTest/OpenCVTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/openCVLibrary2411/openCVLibrary2411.iml" filepath="$PROJECT_DIR$/openCVLibrary2411/openCVLibrary2411.iml" />
+      <module fileurl="file://$PROJECT_DIR$/openCVLibrary320/openCVLibrary320.iml" filepath="$PROJECT_DIR$/openCVLibrary320/openCVLibrary320.iml" />
       <module fileurl="file://$PROJECT_DIR$/opencvlivenativetest/opencvlivenativetest.iml" filepath="$PROJECT_DIR$/opencvlivenativetest/opencvlivenativetest.iml" />
     </modules>
   </component>

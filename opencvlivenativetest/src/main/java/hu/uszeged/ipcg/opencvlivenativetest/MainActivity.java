@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements CvCameraViewListe
                     mOpType = operationTypes.OPENCV_THRESH;
                     mProcessing = false;
                     updateInformationText();
-                    nativeResult = new String("No result.");
+                    nativeResult = "No result.";
                 } break;
                 default: {
 
