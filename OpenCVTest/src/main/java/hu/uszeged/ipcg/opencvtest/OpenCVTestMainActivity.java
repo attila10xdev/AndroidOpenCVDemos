@@ -62,7 +62,7 @@ public class OpenCVTestMainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_11, this, mLoaderCallback);
+        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_2_0, this, mLoaderCallback);
     }
 
     private OnClickListener mBlurFlipBtnListener = new OnClickListener() {
