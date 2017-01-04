@@ -10,9 +10,9 @@
 #include <math.h>
 
 using namespace std;
-using namespace cv;
+//using namespace cv;
 
-Mat result;
+cv::Mat result;
 
 extern "C" {
 JNIEXPORT jstring JNICALL Java_hu_uszeged_ipcg_opencvlivenativetest_MainActivity_OcvProcess( JNIEnv* env,
@@ -33,9 +33,9 @@ JNIEXPORT jstring JNICALL Java_hu_uszeged_ipcg_opencvlivenativetest_MainActivity
     }
 	*/
 
-	Mat &mIn = *(Mat *)addrIn; 
-	Mat& mOut = *(Mat*)addrOut;
-	threshold( mIn, mOut, thval, 255, THRESH_BINARY );
+	cv::Mat &mIn = *(cv::Mat *)addrIn;
+    cv::Mat &mOut = *(cv::Mat *)addrOut;
+    cv::threshold( mIn, mOut, thval, 255, cv::THRESH_BINARY );
 
 	char buffer[128];
 	//sprintf( buffer, "Hello from JNI!" );
