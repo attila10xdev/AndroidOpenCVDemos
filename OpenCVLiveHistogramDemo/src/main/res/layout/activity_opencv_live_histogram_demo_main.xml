@@ -64,7 +64,7 @@
             android:layout_gravity="center"
             android:paddingTop="@dimen/spinner_vertical_margin"
             android:paddingBottom="@dimen/spinner_vertical_margin"
-            android:layout_marginBottom="@dimen/slider_vertical_margin" />
+            android:layout_marginBottom="@dimen/spinner_vertical_margin" />
 
         <Spinner
             android:id="@+id/sp_method"
