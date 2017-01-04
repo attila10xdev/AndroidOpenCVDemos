@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">IpLab Histogram Live Demo</string>
     <string name="hello_world">Hello, World!</string>
-    <string name="warning_experimental">This is an experimental version! Some functions may missing!</string>
+    <string name="warning_experimental">This is an experimental version! Some functions may be missing!</string>
     <string name="request_permission">This sample needs camera permission.</string>
     <string name="btn_caption_grayorcolor">Choose color mode</string>
     <string name="btn_caption_gray">Grayscale</string>
@@ -15,4 +15,14 @@
     <string name="tv_caption_coloreq">Color equalized</string>
     <string name="tv_caption_graystretch">Gray contrast stretch: 0 &lt;- [%1$d, %2$d] -&gt; 255</string>
     <string name="tv_caption_colorstretch">Color contrast stretch: 0 &lt;- [%1$d, %2$d] -&gt; 255</string>
+    <string name="spinner_title">Spinner title</string>
+    <string-array name="sp_color_elements">
+        <item>Color</item>
+        <item>Grayscale</item>
+    </string-array>
+    <string-array name="sp_method_elements">
+        <item>Original</item>
+        <item>Equalize histogram</item>
+        <item>Stretch contrast</item>
+    </string-array>
 </resources>

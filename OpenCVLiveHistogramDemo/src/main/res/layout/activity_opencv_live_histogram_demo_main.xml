@@ -42,36 +42,42 @@
         android:layout_above="@id/slider"
         android:visibility="gone" />
 
-    <Button
-        android:id="@+id/btn1"
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_margin="@dimen/spinner_vertical_margin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:text= "@string/btn_caption_grayorcolor" />
+        android:layout_marginTop="@dimen/spinner_vertical_margin"
+        android:background="@color/colorTransparentGrayBackground">
 
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_caption_original"
-        android:layout_below="@+id/btn1"
-        android:layout_alignParentRight="true" />
+        <Spinner
+            android:id="@+id/sp_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn4"
+            android:prompt="@string/spinner_title"
+            android:layout_alignParentRight="true"
+            android:textAlignment="gravity"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/spinner_vertical_margin"
+            android:paddingBottom="@dimen/spinner_vertical_margin"
+            android:layout_marginBottom="@dimen/slider_vertical_margin" />
 
-    <Button
-        android:id="@+id/btn3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_caption_histeq"
-        android:layout_below="@+id/btn2"
-        android:layout_alignParentRight="true" />
+        <Spinner
+            android:id="@+id/sp_method"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sp_color"
+            android:prompt="@string/spinner_title"
+            android:layout_alignParentRight="true"
+            android:textAlignment="viewEnd"
+            android:layout_gravity="end"
+            android:paddingTop="@dimen/spinner_vertical_margin"
+            android:paddingBottom="@dimen/spinner_vertical_margin" />
 
-    <Button
-        android:id="@+id/btn4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_caption_histstretch"
-        android:layout_below="@+id/btn3"
-        android:layout_alignParentRight="true" />
+    </LinearLayout>
 
 </RelativeLayout>

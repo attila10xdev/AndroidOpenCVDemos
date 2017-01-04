@@ -33,18 +33,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class OpenCVLiveHistogramDemoMainActivity
         extends AppCompatActivity
-        implements CvCameraViewListener2  {
+        implements CvCameraViewListener2, OnItemSelectedListener {
     /*
     TODO:
     - Változtatható élőkép méret
@@ -65,16 +69,15 @@ public class OpenCVLiveHistogramDemoMainActivity
     private int th2Value = 64;
     private SeekBar seekBar, seekBar2;
     private TextView tv1;
-    private Button btn1;
     private Bitmap bmHistogram;
     private ImageView ivHistogram;
-    //private enum operationTypes { GRAY, GRAY_HISTEQ, GRAY_STRETCH, COLOR, COLOR_HISTEQ, ORIGINAL, HISTEQ, HISTSTRETCH }
     private enum operationTypes { ORIGINAL, HISTEQ, CONTRASTSTRETCH }
     private operationTypes mOpType;
     private boolean mProcessing;
     private Mat retMat, retMatRgb, ycrcb, yChannel;
     private boolean mDrawHistogram;
     private boolean mIsColorProcessing;
+    private Spinner sp_color, sp_method;
 
     private BaseLoaderCallback  mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -114,23 +117,24 @@ public class OpenCVLiveHistogramDemoMainActivity
         mOpType = operationTypes.ORIGINAL;
         mIsColorProcessing = true;
 
+        // https://www.tutorialspoint.com/android/android_spinner_control.htm
+        sp_color = (Spinner) findViewById( R.id.sp_color );
+        List<String> categories_color = Arrays.asList( getResources().getStringArray( R.array.sp_color_elements ) );
+        ArrayAdapter<String> dataAdapterColor = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories_color);
+        dataAdapterColor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp_color.setAdapter(dataAdapterColor);
+        sp_color.setOnItemSelectedListener(this);
+
+        sp_method = (Spinner) findViewById( R.id.sp_method );
+        List<String> categories = Arrays.asList( getResources().getStringArray( R.array.sp_method_elements ) );
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp_method.setAdapter(dataAdapter);
+        sp_method.setOnItemSelectedListener(this);
+
         tv1 = (TextView) findViewById( R.id.tv1 );
         tv1.setText(R.string.tv_caption_color);
         ivHistogram = (ImageView) findViewById( R.id.iv_histogram );
-
-        btn1 = (Button) findViewById(R.id.btn1);
-        btn1.setOnClickListener(mBtn1Listener);
-        btn1.setText( R.string.btn_caption_color );
-
-        Button btn2 = (Button) findViewById( R.id.btn2 );
-        btn2.setOnClickListener(mBtn2Listener);
-
-        Button btn3 = (Button) findViewById( R.id.btn3 );
-        btn3.setOnClickListener( mBtn3Listener );
-
-        Button btn4 = (Button) findViewById( R.id.btn4 );
-        //btn4.setVisibility( View.GONE ); // Not yet implemented feature
-        btn4.setOnClickListener(mBtn4Listener);
 
         seekBar = (SeekBar) findViewById( R.id.slider );
         seekBar.setMax( 255 );
@@ -223,7 +227,7 @@ public class OpenCVLiveHistogramDemoMainActivity
         if (requestCode == REQUEST_CAMERA_PERMISSION) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-                OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_11, this, mLoaderCallback);
+                OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_2_0, this, mLoaderCallback);
             }else {
                 // User gave no camera permission...
                 mActivity.finish();
@@ -286,39 +290,40 @@ public class OpenCVLiveHistogramDemoMainActivity
         }
     }
 
-    private View.OnClickListener mBtn1Listener = new View.OnClickListener() {
-        public void onClick(View v) {
-            if( mIsColorProcessing ) {
-                mIsColorProcessing = false;
-                btn1.setText( R.string.btn_caption_gray );
-            } else {
-                mIsColorProcessing = true;
-                btn1.setText( R.string.btn_caption_color );
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        //String item = parent.getItemAtPosition(position).toString();
+        //Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+
+        if( parent == sp_color ) {
+            switch( position ) {
+                case 0:
+                    mIsColorProcessing = true;
+                    break;
+                case 1:
+                    mIsColorProcessing = false;
+                    break;
             }
-            updateInformationText();
         }
-    };
 
-    private View.OnClickListener mBtn2Listener = new View.OnClickListener() {
-        public void onClick(View v) {
-            mOpType = operationTypes.ORIGINAL;
-            updateInformationText();
+        if( parent == sp_method ) {
+            switch( position ) {
+                case 0:
+                    mOpType = operationTypes.ORIGINAL;
+                    break;
+                case 1:
+                    mOpType = operationTypes.HISTEQ;
+                    break;
+                case 2:
+                    mOpType = operationTypes.CONTRASTSTRETCH;
+            }
         }
-    };
 
-    private View.OnClickListener mBtn3Listener = new View.OnClickListener() {
-        public void onClick(View v) {
-            mOpType = operationTypes.HISTEQ;
-            updateInformationText();
-        }
-    };
-
-    private View.OnClickListener mBtn4Listener = new View.OnClickListener() {
-        public void onClick(View v) {
-            mOpType = operationTypes.CONTRASTSTRETCH;
-            updateInformationText();
-        }
-    };
+        updateInformationText();
+    }
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // TODO Auto-generated method stub
+    }
 
     @Override
     public void onCameraViewStarted(int width, int height) {
@@ -341,7 +346,7 @@ public class OpenCVLiveHistogramDemoMainActivity
         } else {
             iframe = inputFrame.gray();
         }
-        Log.d("LiveHistogram", "Mat size: " + iframe.size() );
+        //Log.d("LiveHistogram", "Mat size: " + iframe.size() );
 
         if( !mProcessing ) {
             mProcessing = true;
@@ -362,7 +367,7 @@ public class OpenCVLiveHistogramDemoMainActivity
                         Imgproc.cvtColor(iframe, ycrcb, Imgproc.COLOR_RGB2YCrCb);
                         // Core.split() has a severe memory leak problem!
                         // Must use extractChannel() and insertChannel()!
-                        Core.extractChannel(ycrcb, yChannel, 0 );
+                        Core.extractChannel( ycrcb, yChannel, 0 );
                         Imgproc.equalizeHist( yChannel, yChannel );
                         Core.insertChannel( yChannel, ycrcb, 0);
                         Imgproc.cvtColor(ycrcb, retMatRgb, Imgproc.COLOR_YCrCb2RGB);
@@ -407,7 +412,7 @@ public class OpenCVLiveHistogramDemoMainActivity
                     break;
             }
 
-            if( !mIsColorProcessing) {
+            if( !mIsColorProcessing ) {
                 Mat histImage = new Mat();
                 if( mDrawHistogram ) {
                     List<Mat> channel = new ArrayList<>();
@@ -488,7 +493,7 @@ public class OpenCVLiveHistogramDemoMainActivity
                         }
                     });
                 }
-            } else { // Color historgram is not yet implemented
+            } else { // Color histogram is not yet implemented
                 runOnUiThread(new Runnable() {
                     public void run() {
                         ivHistogram.setVisibility( View.GONE );

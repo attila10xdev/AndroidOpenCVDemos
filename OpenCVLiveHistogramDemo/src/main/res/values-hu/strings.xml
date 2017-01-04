@@ -15,4 +15,14 @@
     <string name="tv_caption_coloreq">Hisztogramkiegyenlített színes</string>
     <string name="tv_caption_graystretch">Szürke kontraszt széthúzás: 0 &lt;- [%1$d, %2$d] -&gt; 255</string>
     <string name="tv_caption_colorstretch">Színes kontraszt széthúzás: 0 &lt;- [%1$d, %2$d] -&gt; 255</string>
+    <string name="spinner_title">Spinner cím</string>
+    <string-array name="sp_color_elements">
+        <item>Színes (RGB)</item>
+        <item>Szürkeárnyalatos</item>
+    </string-array>
+    <string-array name="sp_method_elements">
+        <item>Eredeti</item>
+        <item>Hisztogram kiegyenlítés</item>
+        <item>Kontraszt széthúzás</item>
+    </string-array>
 </resources>
